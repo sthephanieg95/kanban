@@ -1,0 +1,16 @@
+<mat-card>
+  <div *ngIf="angularFireAuth.user | async as user; else showLogin">
+    <p>Logged in as {{ user.email }}</p>
+    <button mat-stroked-button (click)="angularFireAuth.signOut()">
+      Logout
+    </button>
+  </div>
+  <ng-template #showLogin>
+    <app-email-login></app-email-login>
+    <h5>OR</h5>
+    <button mat-raised-button appGoogleSignin>
+      <fa-icon [icon]="['fab', 'google']"></fa-icon>
+      Login with Google
+    </button>
+  </ng-template>
+</mat-card>
