@@ -9,6 +9,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -18,8 +20,9 @@ import {
   FaIconLibrary
 } from '@fortawesome/angular-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { DeleteButtonComponent } from './delete-button/delete-button.component';
 
-const components = [ToolbarComponent];
+const components = [ToolbarComponent, DeleteButtonComponent];
 
 const modules = [
   CommonModule,
@@ -35,12 +38,14 @@ const modules = [
   MatFormFieldModule,
   MatInputModule,
   MatSnackBarModule,
+  MatDialogModule,
+  MatButtonToggleModule,
   RouterModule,
   FontAwesomeModule
 ];
 
 @NgModule({
-  declarations: [...components],
+  declarations: [...components, DeleteButtonComponent],
   imports: [...modules],
   exports: [...components, ...modules]
 })
