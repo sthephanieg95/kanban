@@ -8,11 +8,6 @@
   outline: none;
 }
 
-.mat-drawer-side {
-  border: none;
-  box-shadow: 1px 1px 10px 1px rgb(0 0 0 / 30%);
-}
-
 .sidenav {
   width: 200px;
 }
@@ -31,14 +26,12 @@
   flex: 1 1 auto;
 }
 
-i {
-  font-style: normal;
-  font-size: 1.25em;
-  margin-right: 16px;
-}
-
 .avatar {
-  width: 1.75em;
+  font-size: large;
   border-radius: 50%;
   margin: 0 10px 5px;
+}
+
+.icon {
+  font-size: large;
 }

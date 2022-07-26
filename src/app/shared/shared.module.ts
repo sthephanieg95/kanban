@@ -19,7 +19,12 @@ import {
   FontAwesomeModule,
   FaIconLibrary
 } from '@fortawesome/angular-fontawesome';
-import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons';
+import {
+  faCircleUser,
+  faWindowMaximize,
+  faFireFlameCurved
+} from '@fortawesome/free-solid-svg-icons';
 import { DeleteButtonComponent } from './delete-button/delete-button.component';
 
 const components = [ToolbarComponent, DeleteButtonComponent];
@@ -45,12 +50,18 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [...components, DeleteButtonComponent],
+  declarations: [...components],
   imports: [...modules],
   exports: [...components, ...modules]
 })
 export class SharedModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faGoogle);
+    library.addIcons(
+      faGoogle,
+      faCircleUser,
+      faGithub,
+      faWindowMaximize,
+      faFireFlameCurved
+    );
   }
 }

@@ -5,7 +5,7 @@ import {
   CanActivate,
   RouterStateSnapshot
 } from '@angular/router';
-import { SnackBarService } from '../services/snackBar.service';
+import { SnackBarService } from '../../shared/snack-bar.service';
 
 @Injectable({
   providedIn: 'root'
