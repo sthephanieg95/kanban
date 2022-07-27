@@ -9,8 +9,6 @@ import { Board } from '../model/board.model';
 import { BoardService } from '../board.service';
 import { MatDialog } from '@angular/material/dialog';
 import { BoardDialogComponent } from '../dialogs/board-dialog.component';
-import { TaskDialogComponent } from '../dialogs/task-dialog.component';
-import { Task } from '../model/task.model';
 
 @Component({
   selector: 'app-board-list',
@@ -19,7 +17,8 @@ import { Task } from '../model/task.model';
 })
 export class BoardListComponent implements OnInit, OnDestroy {
   boards: Board[] = [];
-  previousBoard?: Board;
+  previousBoard: Board = {};
+  dropped = true;
   subscription?: Subscription;
 
   constructor(public boardService: BoardService, public dialog: MatDialog) {}
@@ -57,17 +56,20 @@ export class BoardListComponent implements OnInit, OnDestroy {
     });
   }
 
-  handleBoardDelete(board: Board) {
-    if (board.id) {
-      this.boardService.deleteBoard(board.id);
+  saveExitedBoard(exitedBoard: Board) {
+    if (this.dropped) {
+      this.previousBoard = exitedBoard;
+      this.dropped = false;
     }
   }
 
-  saveExitedBoard(currentBoard: Board) {
-    this.previousBoard = currentBoard;
-  }
-
-  taskDrop(event: CdkDragDrop<string[]>, currentBoard: Board) {
+  taskDrop({
+    event,
+    currentBoard
+  }: {
+    event: CdkDragDrop<string[]>;
+    currentBoard: Board;
+  }) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
         currentBoard.tasks!,
@@ -77,42 +79,17 @@ export class BoardListComponent implements OnInit, OnDestroy {
       this.boardService.updateTasks(currentBoard.id!, currentBoard.tasks!);
     } else {
       transferArrayItem(
-        this.previousBoard?.tasks!,
+        this.previousBoard.tasks!,
         currentBoard.tasks!,
         event.previousIndex,
         event.currentIndex
       );
       this.boardService.updateTasks(
-        this.previousBoard?.id!,
-        this.previousBoard?.tasks!
+        this.previousBoard.id!,
+        this.previousBoard.tasks!
       );
       this.boardService.updateTasks(currentBoard.id!, currentBoard.tasks!);
     }
-  }
-
-  openTaskDialog(task?: Task, idx?: number, board?: Board): void {
-    const newTask = { description: 'sdfs', label: 'purple' };
-    console.log(board?.id);
-    const dialogRef = this.dialog.open(TaskDialogComponent, {
-      width: '500px',
-      data: task
-        ? { task: { ...task }, isNew: false, boardId: board?.id, idx }
-        : { task: newTask, isNew: true, boardId: board?.id }
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        console.log(result);
-        if (result.isNew) {
-          this.boardService.updateTasks(board?.id!, [
-            ...board?.tasks!,
-            result.task
-          ]);
-        } else {
-          board?.tasks?.splice(result.idx, 1, result.task);
-          this.boardService.updateTasks(board?.id!, board?.tasks!);
-        }
-      }
-    });
+    this.dropped = true;
   }
 }

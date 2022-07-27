@@ -8,9 +8,15 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BoardListComponent } from './board-list/board-list.component';
 import { BoardDialogComponent } from './dialogs/board-dialog.component';
 import { TaskDialogComponent } from './dialogs/task-dialog.component';
+import { BoardComponent } from './board/board.component';
 
 @NgModule({
-  declarations: [BoardListComponent, BoardDialogComponent, TaskDialogComponent],
+  declarations: [
+    BoardListComponent,
+    BoardDialogComponent,
+    TaskDialogComponent,
+    BoardComponent
+  ],
   imports: [
     CommonModule,
     KanbanRoutingModule,
