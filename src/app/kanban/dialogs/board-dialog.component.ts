@@ -3,7 +3,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-board-dialog',
-  template: ` <h1 mat-dialog-title>Board</h1>
+  template: `
+    <h1 mat-dialog-title>Board</h1>
     <div mat-dialog- class="content">
       <p>What shall we call this board?</p>
       <mat-form-field>
@@ -15,7 +16,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
       <button mat-button [mat-dialog-close]="data.title" cdkFocusInitial>
         Create
       </button>
-    </div>`,
+    </div>
+  `,
   styleUrls: ['./dialog.scss']
 })
 export class BoardDialogComponent {

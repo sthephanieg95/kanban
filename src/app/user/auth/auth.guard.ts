@@ -3,9 +3,9 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
-  RouterStateSnapshot
+  RouterStateSnapshot,
+  Router
 } from '@angular/router';
-import { SnackBarService } from '../../shared/snack-bar.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ import { SnackBarService } from '../../shared/snack-bar.service';
 export class AuthGuard implements CanActivate {
   constructor(
     private angularFireAuth: AngularFireAuth,
-    private snackBarService: SnackBarService
+    private router: Router
   ) {}
 
   async canActivate(
@@ -24,7 +24,7 @@ export class AuthGuard implements CanActivate {
     const isLoggedIn = !!user;
 
     if (!isLoggedIn) {
-      this.snackBarService.authError();
+      this.router.navigate(['/forbidden']);
     }
 
     return isLoggedIn;
