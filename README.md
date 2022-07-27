@@ -27,12 +27,8 @@
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#thesis">Thesis</a></li>
-    <li><a href="#workspace">Workspace</a></li>
-    <li><a href="#parameters">Parameters</a></li>
-    <li><a href="#architecture">Architecture</a></li>
-    <li><a href="#algorithms">Algorithms</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#cicd">CI/CD</a></li>
   </ol>
 </details>
 
