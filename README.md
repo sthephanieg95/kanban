@@ -1,27 +1,110 @@
-# Kanban
+# Kanban 看板
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+<!-- PROJECT LOGO -->
+<br />
 
-## Development server
+<p align="center">
+  <a href="https://github.com/Beomar97/kanban">
+    <img src="img/app-logo.png" alt="Logo" height="200">
+  </a>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  <h3 align="center">Kanban 看板</h3>
 
-## Build
+  <p align="center">
+		Kanban storyboard app inspired by Trello. Based on the course by <a href="https://fireship.io/courses/angular/">Fireship</a>.
+    <br />
+    <a href="https://beomar97-kanban.web.app/"><strong>Explore the demo »</strong></a>
+    <br />
+    <br />
+  </p>
+</p>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<!-- TABLE OF CONTENTS -->
 
-## Running unit tests
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#thesis">Thesis</a></li>
+    <li><a href="#workspace">Workspace</a></li>
+    <li><a href="#parameters">Parameters</a></li>
+    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#algorithms">Algorithms</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## About the Project
+This project is a Kanban storyboard app inspired by [Trello](https://trello.com/en). The developed app is based on the course by [Fireship](https://fireship.io/courses/angular/), but changes and additional features have been added to the original implementation.
 
-## Running end-to-end tests
+![Overview of the Kanban App.](img/app-overview.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Built With
 
-## Further help
+- Angular
+- Firebase
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Tooling
+
+- Husky
+- Prettier
+- ESLint
+- StyleLint
+
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+- npm
+
+  ```shell
+  npm install npm@latest -g
+  ```
+
+- Angular CLI
+
+  ```shell
+  npm install -g @angular/cli
+  ```
+
+### Installation
+
+1. Clone the project
+
+   ```shell
+   git clone https://github.com/Beomar97/kanban.git
+   ```
+
+2. Move to the just cloned repository
+
+   ```shell
+   cd kanban/
+   ```
+
+3. Install dependencies
+
+   ```shell
+   npm install
+   ```
+
+4. Serve the app locally
+
+   ```shell
+   npm run start
+   ```
+
+5. The app should now be locally available at `localhost:4200`
+
+## CI/CD
+
+- [Firebase Hosting](https://firebase.google.com/docs/hosting)
+
+  Build automation and deployment was configured automatically with Firebase
+
+- Triggers
+
+  The app will be automatically deployed to Firebase Hosting on merge and PR via [GitHub Actions](https://github.com/Beomar97/kanban/actions).
