@@ -10,7 +10,10 @@
     *ngFor="let board of boards"
     [board]="board"
     (boardExitedEvent)="saveExitedBoard($event)"
+    (boardDeletedEvent)="boardDelete($event)"
     (taskDroppedEvent)="taskDrop($event)"
+    (taskUpdatedEvent)="taskUpdate($event)"
+    (taskDeletedEvent)="taskDelete($event)"
   >
     <mat-icon cdkDragHandle class="handle">drag_indicator</mat-icon>
   </app-board>

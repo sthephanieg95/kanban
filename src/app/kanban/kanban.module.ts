@@ -9,13 +9,15 @@ import { BoardListComponent } from './board-list/board-list.component';
 import { BoardDialogComponent } from './dialogs/board-dialog.component';
 import { TaskDialogComponent } from './dialogs/task-dialog.component';
 import { BoardComponent } from './board/board.component';
+import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
 
 @NgModule({
   declarations: [
     BoardListComponent,
     BoardDialogComponent,
     TaskDialogComponent,
-    BoardComponent
+    BoardComponent,
+    KanbanBoardComponent
   ],
   imports: [
     CommonModule,
@@ -23,6 +25,7 @@ import { BoardComponent } from './board/board.component';
     SharedModule,
     FormsModule,
     DragDropModule
-  ]
+  ],
+  exports: [BoardComponent]
 })
 export class KanbanModule {}

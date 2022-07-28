@@ -23,15 +23,11 @@
   }
 }
 
-.outer-card.cdk-drag-placeholder {
+.cdk-drag-placeholder {
   opacity: 0.2;
   width: 350px;
   border: 5px dashed gray;
-  margin: 0 10px;
-}
-
-.inner-card.cdk-drag-placeholder {
-  opacity: 0.5;
+  margin: 0 12px;
 }
 
 .cdk-drag-animating {
@@ -51,45 +47,4 @@
   width: 300px;
   padding: 32px;
   height: 350px;
-}
-
-.outer-card {
-  margin: 10px;
-  min-width: 300px;
-  max-width: 300px;
-  padding: 10px;
-  background: whitesmoke;
-}
-
-.inner-card {
-  margin: 5px 0;
-  cursor: pointer;
-}
-
-.blue {
-  background: #71deff;
-  color: black;
-}
-
-.green {
-  background: #36e9b6;
-  color: black;
-}
-
-.yellow {
-  background: #ffcf44;
-  color: black;
-}
-
-.purple {
-  background: #b15cff;
-}
-
-.red {
-  background: #e74a4a;
-}
-
-.gray {
-  background: gray;
-  text-decoration: line-through;
 }

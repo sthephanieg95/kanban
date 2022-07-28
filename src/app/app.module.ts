@@ -11,9 +11,11 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { ErrorModule } from './error/error.module';
+import { DemoBoardComponent } from './home/demo-board/demo-board.component';
+import { KanbanModule } from './kanban/kanban.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, DemoBoardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,7 +24,8 @@ import { ErrorModule } from './error/error.module';
     ErrorModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    KanbanModule
   ],
   providers: [],
   bootstrap: [AppComponent]

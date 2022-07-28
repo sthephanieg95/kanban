@@ -1,0 +1,23 @@
+.container {
+  margin: 30px;
+}
+
+.header {
+  display: flex;
+}
+
+.avatar {
+  margin-right: 10px;
+  border-radius: 50%;
+  height: min-content;
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.subtitle {
+  margin-top: 0;
+  font-size: medium;
+  color: gray;
+}

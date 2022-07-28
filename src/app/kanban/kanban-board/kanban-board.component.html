@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="header" *ngIf="angularFireAuth.user | async as user">
+    <img class="avatar" [src]="user.photoURL" />
+    <div>
+      <h1 class="title">Kanban Board of {{ user.displayName }}</h1>
+      <h2 class="subtitle">{{ user.email }}</h2>
+    </div>
+  </div>
+
+  <app-board-list
+    [boards]="boards"
+    (boardDroppedEvent)="sortBoards($event)"
+    (boardCreatedEvent)="createBoard($event)"
+    (boardDeletedEvent)="deleteBoard($event)"
+    (taskDroppedEvent)="sortTasks($event)"
+    (taskUpdatedEvent)="updateTasks($event)"
+    (taskDeletedEvent)="removeTask($event)"
+  ></app-board-list>
+</div>
