@@ -26,6 +26,6 @@ import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
     FormsModule,
     DragDropModule
   ],
-  exports: [BoardComponent]
+  exports: [BoardListComponent, BoardComponent]
 })
 export class KanbanModule {}

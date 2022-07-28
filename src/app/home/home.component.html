@@ -1,3 +1,19 @@
-<header>
-  <h1>This is the Home Page</h1>
-</header>
+<div class="layout header">
+  <img class="logo" src="assets/app-logo.png" />
+  <h1>Welcome to Kanban 看板</h1>
+  <p>
+    The Kanban storyboard app inspired by Trello. <br />
+    Based on the course by
+    <a href="https://fireship.io/courses/angular/">Fireship</a>.
+  </p>
+  <p>Built with Angular and Firebase 🔥.</p>
+  <button routerLink="/login" mat-raised-button color="primary">
+    Sign up for Free
+  </button>
+</div>
+<div class="layout">
+  <h1>Play with the demo!</h1>
+  <div class="demo-board-container">
+    <mat-card><app-demo-board></app-demo-board></mat-card>
+  </div>
+</div>

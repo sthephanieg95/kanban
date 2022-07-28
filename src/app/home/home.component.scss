@@ -1,3 +1,17 @@
-header {
-  text-align: center;
+.layout {
+  max-width: 80vw;
+  margin: 5vh auto;
+}
+
+.logo {
+  max-height: 200px;
+}
+
+.header {
+  min-height: 20vh;
+}
+
+.demo-board-container {
+  display: flex;
+  justify-content: center;
 }

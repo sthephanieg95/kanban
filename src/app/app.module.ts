@@ -13,6 +13,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { ErrorModule } from './error/error.module';
 import { DemoBoardComponent } from './home/demo-board/demo-board.component';
 import { KanbanModule } from './kanban/kanban.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, DemoBoardComponent],
