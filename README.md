@@ -1,4 +1,4 @@
-# Kanban 看板
+# Kanban 看板 · [![Deploy to Firebase Hosting on merge](https://github.com/Beomar97/kanban/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/Beomar97/kanban/actions/workflows/firebase-hosting-merge.yml) [![Deploy to Firebase Hosting on PR](https://github.com/Beomar97/kanban/actions/workflows/firebase-hosting-pull-request.yml/badge.svg)](https://github.com/Beomar97/kanban/actions/workflows/firebase-hosting-pull-request.yml)
 
 <!-- PROJECT LOGO -->
 <br />
